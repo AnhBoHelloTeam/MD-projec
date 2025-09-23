@@ -221,8 +221,13 @@ app.get('/health', (req, res) => {
   });
 });
 
-// Root endpoint
+// Root endpoint - serve the web interface
 app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/public/index.html');
+});
+
+// API info endpoint
+app.get('/api', (req, res) => {
   res.json({
     success: true,
     message: 'Welcome to Simple CRUD API',

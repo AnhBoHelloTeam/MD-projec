@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo - Simple CRUD App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .demo-container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .demo-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .demo-header h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .demo-steps {
+            background: #e8f4fd;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .demo-steps h3 {
+            color: #1976d2;
+            margin-bottom: 15px;
+        }
+        .demo-steps ol {
+            margin-left: 20px;
+        }
+        .demo-steps li {
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+        .demo-link {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .demo-link a {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 18px;
+            transition: transform 0.3s ease;
+        }
+        .demo-link a:hover {
+            transform: translateY(-2px);
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .feature {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        .feature h4 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .feature p {
+            color: #666;
+            line-height: 1.5;
+        }
+        .api-info {
+            background: #f0f8ff;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        .api-info h4 {
+            color: #1976d2;
+            margin-bottom: 10px;
+        }
+        .api-endpoint {
+            background: #fff;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 5px 0;
+            font-family: monospace;
+            border-left: 3px solid #4caf50;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-container">
+        <div class="demo-header">
+            <h1>🚀 Simple CRUD App Demo</h1>
+            <p>Ứng dụng quản lý sản phẩm với giao diện web đẹp mắt</p>
+        </div>
+
+        <div class="demo-steps">
+            <h3>📋 Hướng dẫn sử dụng:</h3>
+            <ol>
+                <li><strong>Khởi động server:</strong> Chạy <code>npm start</code> trong terminal</li>
+                <li><strong>Truy cập giao diện:</strong> Mở trình duyệt và vào <code>http://localhost:3000</code></li>
+                <li><strong>Thêm sản phẩm:</strong> Điền form và click "Lưu sản phẩm"</li>
+                <li><strong>Xem sản phẩm:</strong> Click "Xem" để xem chi tiết</li>
+                <li><strong>Sửa sản phẩm:</strong> Click "Sửa" để chỉnh sửa</li>
+                <li><strong>Xóa sản phẩm:</strong> Click "Xóa" và xác nhận</li>
+                <li><strong>Tìm kiếm:</strong> Sử dụng ô tìm kiếm để lọc sản phẩm</li>
+            </ol>
+        </div>
+
+        <div class="demo-link">
+            <a href="http://localhost:3000" target="_blank">
+                🎯 Mở giao diện ứng dụng
+            </a>
+        </div>
+
+        <div class="features">
+            <div class="feature">
+                <h4>✨ Giao diện đẹp</h4>
+                <p>Thiết kế hiện đại, responsive trên mọi thiết bị với gradient background và animations mượt mà.</p>
+            </div>
+            <div class="feature">
+                <h4>🔍 Tìm kiếm thông minh</h4>
+                <p>Tìm kiếm theo tên, mô tả hoặc danh mục sản phẩm một cách nhanh chóng.</p>
+            </div>
+            <div class="feature">
+                <h4>📱 Responsive Design</h4>
+                <p>Hoạt động hoàn hảo trên desktop, tablet và mobile với layout linh hoạt.</p>
+            </div>
+            <div class="feature">
+                <h4>⚡ Real-time Updates</h4>
+                <p>Cập nhật giao diện ngay lập tức sau mỗi thao tác CRUD.</p>
+            </div>
+            <div class="feature">
+                <h4>🎨 UI/UX tốt</h4>
+                <p>Giao diện trực quan với icons, colors và typography chuyên nghiệp.</p>
+            </div>
+            <div class="feature">
+                <h4>🛡️ Validation</h4>
+                <p>Kiểm tra dữ liệu đầu vào và hiển thị thông báo lỗi rõ ràng.</p>
+            </div>
+        </div>
+
+        <div class="api-info">
+            <h4>🔗 API Endpoints</h4>
+            <div class="api-endpoint">GET /api/products - Lấy tất cả sản phẩm</div>
+            <div class="api-endpoint">GET /api/products/:id - Lấy sản phẩm theo ID</div>
+            <div class="api-endpoint">POST /api/products - Tạo sản phẩm mới</div>
+            <div class="api-endpoint">PUT /api/products/:id - Cập nhật sản phẩm</div>
+            <div class="api-endpoint">DELETE /api/products/:id - Xóa sản phẩm</div>
+            <div class="api-endpoint">GET /health - Health check</div>
+        </div>
+
+        <div style="text-align: center; margin-top: 30px; color: #666;">
+            <p>💡 <strong>Tip:</strong> Mở Developer Tools (F12) để xem network requests và console logs</p>
+        </div>
+    </div>
+</body>
+</html>
