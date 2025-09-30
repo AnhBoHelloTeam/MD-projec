@@ -1,14 +1,14 @@
 {
   "name": "simple-crud-app",
   "version": "1.0.0",
-  "description": "Simple CRUD application with Node.js, Express and PostgreSQL",
-  "main": "server.js",
+  "description": "Simple CRUD application with Node.js, Express and SQLite database",
+  "main": "server-db.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon server.js",
+    "start": "node server-db.js",
+    "dev": "nodemon server-db.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["crud", "express", "nodejs", "api", "postgresql"],
+  "keywords": ["crud", "express", "nodejs", "api", "sqlite", "database"],
   "author": "",
   "license": "MIT",
   "dependencies": {
@@ -16,7 +16,7 @@
     "cors": "^2.8.5",
     "body-parser": "^1.20.2",
     "uuid": "^9.0.0",
-    "pg": "^8.11.3",
+    "sqlite3": "^5.1.6",
     "dotenv": "^16.3.1"
   },
   "devDependencies": {
