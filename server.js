@@ -226,6 +226,11 @@ app.get('/', (req, res) => {
   res.sendFile(__dirname + '/public/index.html');
 });
 
+// Test dashboard endpoint
+app.get('/test', (req, res) => {
+  res.sendFile(__dirname + '/public/test-dashboard.html');
+});
+
 // API info endpoint
 app.get('/api', (req, res) => {
   res.json({
